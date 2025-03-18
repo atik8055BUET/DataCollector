@@ -32,20 +32,18 @@ print("Please, see the last line of the csv file and enter the starting index. C
 
 while True:
     try:
-        start_index=int(input("Please, enter the starting index: "))+1
+        start_index=int(input("\nPlease, enter the starting index(MUST): "))+1
         if(start_index<1100000 and start_index>0):
             break
     except Exception as e:
         print("Invalid input. Please enter a valid number.")
 
-while True:
-    try:
-        end_index=int(input("Please, enter the ending index: "))
-        if(end_index>1100000 or end_index<0 or end_index<start_index):
-            end_index=max(int(end_index)+1, 1100000)
-        break
-    except Exception as e:
-        print("Invalid input. Please enter a valid number.")
+try:
+    end_index=int(input("Please, enter the ending index(optional): "))
+    if(end_index>1100000 or end_index<0 or end_index<start_index):
+        end_index=max(int(end_index)+1, 1100000)
+except Exception as e:
+    end_index=1100000
     
 for i in range(start_index, end_index):
     try:
