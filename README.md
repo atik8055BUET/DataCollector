@@ -28,7 +28,7 @@ Enter your ending index from the table
 
 | Name | starting index | ending index |
 | --- | --- | --- |
-|atik |0 | 220000|
+|atik |1 | 220000|
 |tahmid | 220000 | 440000 |
 |tanvir| 440000| 660000|
 |lamia|660000|880000|
