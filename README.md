@@ -24,7 +24,7 @@ Then,
 - your starting index will be: 1263
 
 ### Ending index
-Enter your ending index from the table
+Enter your ending index from the table. It is optional, you can make it blank.
 
 | Name | starting index | ending index |
 | --- | --- | --- |
