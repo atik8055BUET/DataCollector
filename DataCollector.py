@@ -29,12 +29,29 @@ baseUrl="https://www.bd-pratidin.com/national/2025/03/18/"
 
 
 print("Please, see the last line of the csv file and enter the starting index. Careful with the index, it may generate repeated data.")
-start_index=input("Please, enter the starting index: ")
-start_index=int(start_index)+1
-for i in range(start_index, 1000000):
+
+while True:
+    try:
+        start_index=int(input("Please, enter the starting index: "))+1
+        if(start_index<1100000 and start_index>0):
+            break
+    except Exception as e:
+        print("Invalid input. Please enter a valid number.")
+
+while True:
+    try:
+        end_index=int(input("Please, enter the ending index: "))
+        if(end_index>1100000 or end_index<0 or end_index<start_index):
+            end_index=max(int(end_index)+1, 1100000)
+        break
+    except Exception as e:
+        print("Invalid input. Please enter a valid number.")
+    
+for i in range(start_index, end_index):
     try:
         ParseAndAdd(baseUrl+str(i), "trainData.csv",i)
     except Exception as e:
         ErrorStorer(i)
         print(f"Error at {i}: {e}")
     time.sleep(1)
+    
